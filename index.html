@@ -1,13 +1,14 @@
 <html>
   <body>
     <div id="cool"></div>
-    <script type="text/javascript">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
         const cool = document.getElementById('cool');
-        const header = document.createElement('h1');
-        const text = "Live. Die. Repeat";
-        const headerContent = document.createTextNode(text);
-        header.appendChild(headerContent);
-        cool.appendChild(header);
+        const root = ReactDOM.createRoot(cool);
+        root.render(<h1>Live. Die. Repeat.</h1>);
+
     </script>
   </body>
 </html>
