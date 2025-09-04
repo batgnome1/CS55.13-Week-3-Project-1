@@ -6,13 +6,21 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/jsx">
         const cool = document.getElementById('cool');
-        function Header() {
-            return <h1>Lie. Die. Repeat.</h1>;
+        function Header({title}) {
+            console.log(title);
+            return <h1>{title}</h1>;
         }
         function HomePage() {
+
+            const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
             return <div>
                 {/* Nesting the Header component */}
-                <Header />
+                <Header title="Live. Die. Repeat." />
+                      <ul>
+                        {names.map((name) => (
+                            <li key={name}>{name}</li>
+                                ))}
+      </ul>
             </div>;
         }
         const root = ReactDOM.createRoot(cool);
